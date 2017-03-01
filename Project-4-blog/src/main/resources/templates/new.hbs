@@ -1,0 +1,35 @@
+{{#partial "content"}}
+    <section>
+        <div class="container">
+            <div class="new-entry">
+                <h2>Publish New Entry</h2>
+                <form action="/" method="post">
+                    <label for="title"> Title</label>
+                    <input type="text" name="title"><br>
+                    
+                    <label for="text">Entry</label>
+                    <textarea rows="5" name="text"></textarea>
+                    
+                    <input type="submit" value="Publish Entry" class="button">
+                    <a href="#" class="button button-secondary">Cancel</a> <br>
+
+                    <!-- add #each block here to loop through enum tag values? -->
+                    <label for="tags">Tags</label>
+                    <select name="tags" id="tags" multiple="multiple">
+                        <option value="Java">Java</option>
+                        <option value="Python">Python</option>
+                        <option value="C++">C++</option>
+                        <option value="C#">C#</option>
+                        <option value="Spark">Spark</option>
+                        <option value="Spring">Spring</option>
+                        <option value="Flask">Flask</option>
+                        <option value="Django">Django</option>
+                    </select>
+                </form>
+            </div>
+        </div>
+    </section>
+{{/partial}}
+
+
+{{> base.hbs}}

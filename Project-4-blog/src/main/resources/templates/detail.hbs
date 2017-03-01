@@ -1,0 +1,51 @@
+{{#partial "content"}}
+        <section>
+            <div class="container">
+                <div class="entry-list single">
+                    <article>
+                        <h1 id="title" name="title">{{entry.title}}</h1>
+                        <h2>
+                            {{#if entry.tags}}
+                                {{#with entry.tags}}
+                                    <div>{{this}}</div>
+                                {{/with}}
+                            {{/if}}
+                        </h2>
+
+                        <time id="dateTime" name="dateTime">{{entry.dateTime}}</time>
+
+                        <div class="entry">
+                            <p id="text" name="text">{{entry.text}}</p>
+                            <p><a class="link" href="edit/{{entry.slug}}">Edit Entry</a></p>
+                            <p><a class="link" href="delete/{{entry.slug}}">Delete Entry</a></p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <section class="entry-comments">
+            <div class="container">
+                <h2>Comments</h2>
+                {{#each entry.comments}}
+                    <div class="comment">
+                        <strong>{{user}}</strong>
+                        <time>{{dateTime}}</time>
+                        <p>{{text}}</p>
+                    </div>
+                {{/each}}
+                <div class="new-comment">
+                    <form action="/details/{{entry.slug}}" method="post">
+                        <label for="name"> Name</label>
+                        <input type="text" name="name"><br>
+
+                        <label for="comment">Comment</label>
+                        <textarea rows="5" name="comment"></textarea>
+
+                        <input type="submit" value="Post Comment" class="button">
+                    </form>
+                </div>
+            </div>
+        </section>
+{{/partial}}
+
+{{> base.hbs}}
