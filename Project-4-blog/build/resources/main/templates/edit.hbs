@@ -6,7 +6,7 @@
                 <form action="/details/{{entry.slug}}" method="post">
 
                     <label for="title">Title (Currently "{{entry.title}}")</label>
-                    <input type="text" name="title">{{entry.title}}<br>
+                    <input type="text" name="title"><br>
 
                     <label for="entry">Entry</label>
                     <textarea rows="5" name="text">{{entry.text}}</textarea>
@@ -14,6 +14,8 @@
                     <input type="submit" value="Save Entry" class="button">
 
                     <a href="/details/{{entry.slug}}" class="button button-secondary">Cancel</a>
+
+                    <a href="/details/edit/delete/{{entry.slug}}" class="button button-secondary" >Delete Entry</a>
                 </form>
             </div>
         </div>

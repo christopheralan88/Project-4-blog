@@ -101,7 +101,7 @@ public class Main {
             return new ModelAndView(model, "detail.hbs");
         }, new HandlebarsTemplateEngine());
 
-        get("details/delete/:slug", (req, res) -> {
+        get("details/edit/delete/:slug", (req, res) -> { //TODO:  TEST CJ
             //req.session().attribute("entry-to-delete", req.queryParams("entry"));
             Map<String, Object> model = new HashMap<>();
             model.put("entry", blogs.findEntryBySlug(req.params("slug")));
