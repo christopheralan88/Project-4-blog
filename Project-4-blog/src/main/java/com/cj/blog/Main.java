@@ -24,11 +24,16 @@ public class Main {
 
 
     public static void main(String[] args) {
-        // uncomment below to add test blog entries
-        /*BlogEntry blogEntry = new BlogEntry("First Blog","admin", "I've never written a blog entry before now", null);
+        // comment below to not add test blog entries
+        BlogEntry blogEntry = new BlogEntry("Why I love Java","admin", "Because it's awesome.",
+                new String[]{"Java"});
         blogs.addEntry(blogEntry);
-        BlogEntry blogEntry2 = new BlogEntry("Second Blog", "admin", "This is my second blog entry", null);
-        blogs.addEntry(blogEntry2);*/
+        BlogEntry blogEntry2 = new BlogEntry("Why I love Spark", "admin", "Becaues it's great.",
+                new String[]{"Java", "Spark"});
+        blogs.addEntry(blogEntry2);
+        BlogEntry blogEntry3 = new BlogEntry("Why I love Spring", "admin", "Because everybody says I should like it.",
+                new String[]{"Spring", "Java"});
+        blogs.addEntry(blogEntry3);
 
         staticFileLocation("/public");
 
